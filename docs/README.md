@@ -1,4 +1,13 @@
 # Math formulas by Python Functions
+
+## Python Math Module  
+`math` — Mathematical functions and constants.  
+Math module provides functions to deal with both basic operations such as addition(+), subtraction(-), multiplication(*), division(/) and advance operations like trigonometric, logarithmic, exponential functions.  
+Math module provides various the value of various constants like pi, tau. Having such constants saves the time of writing the value of each constant every time we want to use it and that too with great precision. ***In this particular project from this module, the Pi constant is used to calculate the perimeter and area of a circle.***
+```python
+print(math.pi) -> 3.141592653589793
+```
+
 ## Area
 
 - ### Circle: S = πR²  
