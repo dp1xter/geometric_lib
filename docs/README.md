@@ -222,7 +222,12 @@ def perimeter(a, b, c):
     
     return a + b + c 
 ```
-**Input:** `print(perimeter(3, 7, 5))` -> **Output:** `15`  
+**Input:** `print(perimeter(3, 7, 5))` -> **Output:** `15`
+
+## Unit-tests  
+
+02.11.23 - Unit-tests added.  
+The tests have been added to the [unit_tests](..\unit_tests) folder.
 
 ## Project change/Commits  
 
