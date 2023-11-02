@@ -226,9 +226,10 @@ def perimeter(a, b, c):
 
 ## Project change/Commits  
 
-| Commit        | Changes                                       |
-|---------------| ----------------------------------------------|
-| `de69eff`     | Creating triangle.py + fixes in rectangle.py  |
-| `7f99951`     | Creating rectangle.py                         |
-| `d078c8d`     | Docs added                                    |
-| `8ba9aeb`     | Circle and square added                       |
+| Commit        | Changes                                      |
+|---------------|----------------------------------------------|
+| `2631a6a`     | Unit_tests added                             |
+| `de69eff`     | Creating triangle.py + fixes in rectangle.py |
+| `7f99951`     | Creating rectangle.py                        |
+| `d078c8d`     | Docs added                                   |
+| `8ba9aeb`     | Circle and square added                      |
