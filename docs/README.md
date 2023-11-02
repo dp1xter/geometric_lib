@@ -227,7 +227,7 @@ def perimeter(a, b, c):
 ## Unit-tests  
 
 02.11.23 - Unit-tests added.  
-The tests have been added to the [unit_tests](geometric_lib/unit_tests/) folder.
+The tests have been added to the [unit_tests](../unit_tests) folder.
 
 ## Project change/Commits  
 
