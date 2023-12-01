@@ -1,5 +1,18 @@
 # This is a basic workflow to help you get started with Actions
 
+.steps_template: &steps
+  steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3
+
+    # Runs a set of commands using the runners shell
+    - name: Run a multi-line script
+      run: |
+        python -m unittest unit_tests/circle_tests.py
+        python -m unittest unit_tests/rectangle_tests.py
+        python -m unittest unit_tests/square_tests.py
+        python -m unittest unit_tests/triangle_tests.py
+
 name: CI
 
 # Controls when the workflow will run
@@ -18,33 +31,12 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+    <<: *steps
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          python -m unittest unit_tests/circle_tests.py
-          python -m unittest unit_tests/rectangle_tests.py
-          python -m unittest unit_tests/square_tests.py
-          python -m unittest unit_tests/triangle_tests.py
+    # Steps represent a sequence of tasks that will be executed as part of the job
 
   build_windows:
     # The type of runner that the job will run on
     runs-on: windows-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          python -m unittest unit_tests/circle_tests.py
-          python -m unittest unit_tests/rectangle_tests.py
-          python -m unittest unit_tests/square_tests.py
-          python -m unittest unit_tests/triangle_tests.py
-
+    <<: *steps
