@@ -1,42 +1,39 @@
-# This is a basic workflow to help you get started with Actions
-
-.steps_template:
-  steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v3
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        python -m unittest unit_tests/circle_tests.py
-        python -m unittest unit_tests/rectangle_tests.py
-        python -m unittest unit_tests/square_tests.py
-        python -m unittest unit_tests/triangle_tests.py
-
 name: CI
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-    
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+  push:
+
+    branches: [ "main" ]
+
 jobs:
-  # This workflow contains a single job called "build"
+
   build_ubuntu:
-    # The type of runner that the job will run on
+
     runs-on: ubuntu-latest
 
-    extends: .steps_template
+    steps:
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+      - uses: actions/checkout@v3
+
+      - name: Run UnitTests Ubuntu
+        run: |
+          python -m unittest unit_tests/circle_tests.py
+          python -m unittest unit_tests/rectangle_tests.py
+          python -m unittest unit_tests/square_tests.py
+          python -m unittest unit_tests/triangle_tests.py
 
   build_windows:
-    # The type of runner that the job will run on
+
     runs-on: windows-latest
 
-    extends: .steps_template
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Run UnitTests Windows
+        run: |
+          python -m unittest unit_tests/circle_tests.py
+          python -m unittest unit_tests/rectangle_tests.py
+          python -m unittest unit_tests/square_tests.py
+          python -m unittest unit_tests/triangle_tests.py
