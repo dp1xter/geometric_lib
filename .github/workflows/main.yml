@@ -1,13 +1,9 @@
 name: CI
 
 on:
-
   push:
-
     branches: [ "main" ]
-
 jobs:
-
   tests:
     strategy:
       matrix:
@@ -15,7 +11,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-
       - name: Run UnitTests Windows
         run: |
           python -m unittest unit_tests/circle_tests.py
