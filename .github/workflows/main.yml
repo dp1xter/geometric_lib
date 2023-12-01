@@ -8,27 +8,11 @@ on:
 
 jobs:
 
-  build_ubuntu:
-
-    runs-on: ubuntu-latest
-
+  tests:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     steps:
-
-      - uses: actions/checkout@v3
-
-      - name: Run UnitTests Ubuntu
-        run: |
-          python -m unittest unit_tests/circle_tests.py
-          python -m unittest unit_tests/rectangle_tests.py
-          python -m unittest unit_tests/square_tests.py
-          python -m unittest unit_tests/triangle_tests.py
-
-  build_windows:
-
-    runs-on: windows-latest
-
-    steps:
-
       - uses: actions/checkout@v3
 
       - name: Run UnitTests Windows
